@@ -1,6 +1,7 @@
 from tools.constant import Constant
 
-ENGINE_DATABASE = 'sqlite:///data/db.sqlite'
+ENGINE_DATABASE = "postgresql+psycopg2://root:root@labserv_db.serv.xamex.tech:5432/lab1db"
+# ENGINE_DATABASE = 'sqlite:///data/db.sqlite'
 
 
 # Методы запросов
@@ -71,6 +72,7 @@ PATH_DELETE_PRODUCT_REQUEST = '/products/<int:id_product>'
 
 # Create (Создание корзины)
 # POST /carts
+PATH_CREATE_CART_REQUEST = '/carts'
 CREATE_CART_REQUEST = {
     'user_id': 0,
 }
@@ -93,7 +95,6 @@ GET_CART_ANSWER = {
       'product_id': 0,
       'quantity': 0,
       'price': 0.0
-
     }
   ]
 }

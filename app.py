@@ -3,7 +3,7 @@ import sqlalchemy as db
 from flask import Flask, jsonify, request
 from tools.database import create_db, session
 from settings.config import PATH_GET_PRODUCT_REQUEST, RequestMethod, PATH_CREATE_PRODUCT_REQUEST, \
-    PATH_UPDATE_PRODUCT_REQUEST, PATH_DELETE_PRODUCT_REQUEST
+    PATH_UPDATE_PRODUCT_REQUEST, PATH_DELETE_PRODUCT_REQUEST, PATH_CREATE_CART_REQUEST
 from models.product import Product
 from tools.request_worker import ProductRequest
 
@@ -57,6 +57,18 @@ def delete_product(id_product):
         return {'message': 'Все удалилось'}, 200
     else:
         return {'message': 'Не удалилось нихуя'}, 500
+
+
+# @app.route(PATH_CREATE_CART_REQUEST, methods=[RequestMethod.DELETE])
+# def create_cart(id_product):
+#     product = Product.query.filter(Product.id == id_product).first()
+#     if product:
+#         session.delete(product)
+#         session.commit()
+#
+#         return {'message': 'Все удалилось'}, 200
+#     else:
+#         return {'message': 'Не удалилось нихуя'}, 500
 
 
 if __name__ == '__main__':
