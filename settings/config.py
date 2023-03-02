@@ -1,7 +1,7 @@
 from tools.constant import Constant
 
-ENGINE_DATABASE = "postgresql+psycopg2://root:root@labserv_db.serv.xamex.tech:5432/lab1db"
-# ENGINE_DATABASE = 'sqlite:///data/db.sqlite'
+# ENGINE_DATABASE = "postgresql+psycopg2://root:root@labserv_db.serv.xamex.tech:5432/lab1db"
+ENGINE_DATABASE = 'sqlite:///data/db.sqlite'
 
 
 # Методы запросов
@@ -52,7 +52,6 @@ GET_PRODUCT_ANSWER = {
 # PUT /products/{id}
 PATH_UPDATE_PRODUCT_REQUEST = '/products/<int:id_product>'
 UPDATE_PRODUCT_REQUEST = {
-    'id': 0,
     'price': 0,
 }
 # Ответ:

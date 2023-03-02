@@ -27,7 +27,7 @@ def get_product(id_product):
 @app.route(PATH_CREATE_PRODUCT_REQUEST, methods=[RequestMethod.POST])
 def create_product():
     fields: dict = request.json
-    fields['id'] = random.random()
+    fields['id'] = random.randint(0, 100_000)
     new_obj = Product(**fields)
     session.add(new_obj)
     session.commit()
@@ -75,5 +75,15 @@ def delete_product(id_product):
 
 
 if __name__ == '__main__':
+    for i in range(50):
+        fields = {
+            'name': str(random.randint(1, 100)),
+            'description': str(random.randint(1, 100)),
+            'quantity': random.randint(1, 100),
+            'price': random.randint(1, 100),
+        }
+        new_obj = Product(**fields)
+        session.add(new_obj)
+        session.commit()
     create_db()
     app.run()
