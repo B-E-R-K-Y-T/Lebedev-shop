@@ -2,7 +2,7 @@ from tools.database import Base, database
 
 
 class Cart(Base):
-    __tablename__ = 'cart'
+    __tablename__ = 'orders'
 
     id = database.Column(database.Integer, primary_key=True)
     user_id = database.Column(database.Integer, nullable=False)

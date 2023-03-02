@@ -1,7 +1,7 @@
 from tools.database import Base, database
 
 
-class Product(Base):
+class Products(Base):
     __tablename__ = 'products'
 
     id = database.Column(database.Integer, primary_key=True)

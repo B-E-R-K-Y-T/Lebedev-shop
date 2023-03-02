@@ -6,9 +6,9 @@ from tools.database import create_db, session
 from settings.config import PATH_GET_PRODUCT_REQUEST, RequestMethod, PATH_CREATE_PRODUCT_REQUEST, \
     PATH_UPDATE_PRODUCT_REQUEST, PATH_DELETE_PRODUCT_REQUEST, PATH_CREATE_CART_REQUEST, PATH_GET_CART_REQUEST, \
     GET_CART_ANSWER, PATH_UPDATE_CART_REQUEST
-from models.product import Product
-from models.cart import Cart
-from models.cart_products import CartProducts
+from models.products import Product
+from models.carts import Cart
+from models.carts_products import CartProducts
 from tools.request_worker import ProductRequest
 
 app = Flask(__name__)

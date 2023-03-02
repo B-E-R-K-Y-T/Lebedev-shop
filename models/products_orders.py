@@ -1,11 +1,11 @@
 from tools.database import Base, database
 
 
-class CartProducts(Base):
-    __tablename__ = 'cart_products'
+class CartsProducts(Base):
+    __tablename__ = 'products_orders'
 
     count = database.Column(database.Integer, nullable=False)
-    cart_id = database.Column(database.Integer, primary_key=True)
+    order_id = database.Column(database.Integer, primary_key=True)
     product_id = database.Column(database.Integer, database.ForeignKey('cart.id'))
 
     def __getitem__(self, item):

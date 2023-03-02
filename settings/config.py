@@ -1,3 +1,5 @@
+import random
+
 from tools.constant import Constant
 
 # ENGINE_DATABASE = "postgresql+psycopg2://root:root@labserv_db.serv.xamex.tech:5432/lab1db"
@@ -73,6 +75,7 @@ PATH_DELETE_PRODUCT_REQUEST = '/products/<int:id_product>'
 # POST /carts
 PATH_CREATE_CART_REQUEST = '/carts'
 CREATE_CART_REQUEST = {
+    'id': 0,
     'user_id': 0,
 }
 # Ответ:
@@ -127,3 +130,75 @@ UPDATE_CART_ANSWER = {
 # Создание заказа
 #
 # put/orders
+
+
+
+# Запросы:
+# ======================================================================================================================
+#
+#                                       __________Пользователи____________
+#
+# ======================================================================================================================
+# Create (Создание корзины)
+# POST /user
+PATH_CREATE_USER_REQUEST = '/user'
+CREATE_USER_REQUEST = {
+    'id': 0,
+    'name': '',
+    'email':''
+
+}
+# Ответ:
+CREATE_USER_ANSWER = {
+    'id': 0
+}
+# ======================================================================================================================
+#
+#                                       __________Заказы____________
+#
+# ======================================================================================================================
+# Create (Создание корзины)
+# POST /orders
+PATH_CREATE_ORDERS_REQUEST = '/orders'
+CREATE_ORDERS_REQUEST = {
+  "id": 0,
+  "items": [
+    {
+      "product_id": 0,
+      "quantity": 0
+    },
+    {
+      "product_id": 0,
+      "quantity": 0
+    }
+  ]
+}
+#ОТвет:
+# GET /orders/{id}
+PATH_GET_ORDERS_REQUEST = '/orders/{id}'
+GET_ORDERS_REQUEST = {
+  "id": 987,
+  "customer_id": 0,
+  "items": [
+    {
+      "product_id": 0,
+      "quantity": 0,
+      "price": 0
+    },
+    {
+      "product_id": 0,
+      "quantity": 0,
+      "price": 0
+    }
+  ],
+  "total_price": 0
+}
+# DELETE /orders/{id}
+PATH_DELETE_PRODUCT_REQUEST = '/orders/<int:id_orders>'
+#ОТвет:
+{
+    'message':'Заказ удален'
+}
+
+
+
