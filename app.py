@@ -1,4 +1,5 @@
 import sqlalchemy as db
+import random
 
 from flask import Flask, jsonify, request
 from tools.database import create_db, session
@@ -25,7 +26,9 @@ def get_product(id_product):
 
 @app.route(PATH_CREATE_PRODUCT_REQUEST, methods=[RequestMethod.POST])
 def create_product():
-    new_obj = Product(**request.json)
+    fields: dict = request.json
+    fields['id'] = random.random()
+    new_obj = Product(**fields)
     session.add(new_obj)
     session.commit()
     serialized = {'id': new_obj.id}
