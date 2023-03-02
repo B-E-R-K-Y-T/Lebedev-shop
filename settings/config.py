@@ -83,17 +83,17 @@ CREATE_CART_ANSWER = {
 
 # Read (Чтение корзины)
 # GET /carts/{id}
-#
+PATH_GET_CART_REQUEST = '/carts/<int:id_cart>'
 # Ответ:
 GET_CART_ANSWER = {
   'id': 0,
   'user_id': 0,
-  'total_price': 0.0,
+  'total_price': 0,
   'items': [
     {
       'product_id': 0,
       'quantity': 0,
-      'price': 0.0
+      'price': 0
     }
   ]
 }
@@ -101,14 +101,14 @@ GET_CART_ANSWER = {
 
 # Update (Обновление корзины)
 # PUT /carts/{id}
+PATH_UPDATE_CART_REQUEST = '/carts/<int:id_cart>'
 UPDATE_CART_REQUEST = {
   'id': 0,
   'items': [
     {
       'product_id': 0,
       'quantity': 0,
-      'price': 0.0
-
+      'price': 0
     }
   ]
 }
