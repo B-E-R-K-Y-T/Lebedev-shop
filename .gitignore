@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 lesson_tests/
+tutor/
