@@ -130,3 +130,4 @@ dmypy.json
 
 lesson_tests/
 tutor/
+tutor_rest_api.py

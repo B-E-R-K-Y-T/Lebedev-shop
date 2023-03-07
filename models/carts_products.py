@@ -6,7 +6,7 @@ class CartsProducts(Base):
 
     count = database.Column(database.Integer, nullable=False)
     cart_id = database.Column(database.Integer, primary_key=True)
-    product_id = database.Column(database.Integer, database.ForeignKey('cart.id'))
+    product_id = database.Column(database.Integer, database.ForeignKey('carts.id'))
 
     def __getitem__(self, item):
         if hasattr(self, item):

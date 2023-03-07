@@ -2,6 +2,7 @@ import random
 
 from tools.constant import Constant
 
+
 # ENGINE_DATABASE = "postgresql+psycopg2://root:root@labserv_db.serv.xamex.tech:5432/lab1db"
 ENGINE_DATABASE = 'sqlite:///data/db.sqlite'
 
@@ -12,6 +13,7 @@ class RequestMethod(Constant):
     POST = 'POST'
     PUT = 'PUT'
     DELETE = 'DELETE'
+
 
 
 # Запросы:
