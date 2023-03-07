@@ -44,3 +44,10 @@ Port-Forwarding домой.
 * тройка - графики с PostgreSQL
 * четверка - графики с PostgreSQL, Redis
 * пятерка - графики с PostgreSQL, Redis, Cassandra
+
+
+
+
+
+
+ТАКАЯ ХУЕТА!
